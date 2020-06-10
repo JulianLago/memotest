@@ -6,11 +6,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "JulianLago",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulianLago/memotest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JulianLago/memotest/issues"
+  },
+  "homepage": "https://github.com/JulianLago/memotest#readme"
 }

@@ -1,0 +1,98 @@
+html body{
+
+    background: url(img/background/casa.jpg) no-repeat;
+    background-size: 1980px;
+}
+
+.tabla{
+
+    width: 800px;
+    margin: auto;
+    
+}
+.tablero{
+    border:3px solid black;
+    border-radius: 5%;
+    padding:5%;
+    background-color: rgb(12, 102, 34);
+}
+
+.tablero-fila{    
+    display: flex;
+    justify-content: space-evenly;
+    height: 25vh;
+    
+    
+    }
+
+.tarjeta{
+    border:2px solid black;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    margin: auto;
+    width: 75%;
+    border-radius: 25%;    
+    height: 80%;
+}
+.img-viking{
+    background: url(img/drakkar.jpg)   no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.img-romano{
+    background: url(img/cent.jpg)   no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.img-celta{
+    background: url(img/celt.png)   no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.img-chaman{
+    background: url(img/chaman2.png)   no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.img-mongol{
+    background: url(img/mong2.jpg)   no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.img-monk{
+    background: url(img/monk.jpg)   no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cartel-fin{
+    position: fixed;
+    background-color: rgb(255, 165, 47);
+    text-align: center;
+    width: 250px;
+    margin-bottom: 50%;
+    
+    border-radius: 15%;
+    border:3px solid black;
+    font-family: MedievalSharp;
+    font-size: 30pt;
+    
+}
+#hud{
+    
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+}
+
+#mezclar{
+    background-color: rgb(255, 165, 47);
+    text-align: center;
+    width: 250px;
+    border-radius: 15%;
+    border:3px solid black;
+    font-family: MedievalSharp;
+    font-size: 25pt;
+}
