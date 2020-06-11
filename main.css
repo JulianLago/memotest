@@ -1,6 +1,6 @@
 html body{
 
-    background: url(img/background/casa.jpg) no-repeat;
+    background: url(img/background/bosque.jpg) no-repeat;
     background-size: 1980px;
 }
 
@@ -61,6 +61,11 @@ html body{
 }
 .img-monk{
     background: url(img/monk.jpg)   no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.img-back{
+    background: url(img/back-yggdra2.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
