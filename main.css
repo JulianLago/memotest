@@ -119,8 +119,9 @@ html,body{
 @media (max-width: 768px) {
     .tablero{
         background-color: blueviolet;
-        width: 60vh;
-        height: 60vh;
-     
-}  }
+        
+        height: 90vh;}
+
+
+}
  
