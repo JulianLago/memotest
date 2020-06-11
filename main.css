@@ -115,12 +115,12 @@ html,body{
     font-family: MedievalSharp;
     font-size: 150%;
 }
-/*
+
 @media (max-width: 768px) {
     .tablero{
         background-color: blueviolet;
         width: 60vh;
-        height: auto;
+        height: 60vh;
      
-}  }*/
+}  }
  
