@@ -28,13 +28,17 @@ function mostrarTarjeta(tarjeta){
         tarjeta.classList.remove(imgTarjetaBack);
     
 }
+function sumarIntento(){
+    document.getElementById("intentos").innerHTML="Intentos: " + intentos;
+}
 function manejarEleccion(tarjeta){
     mostrarTarjeta(tarjeta);
 
     if($primerTarjeta==null){
-        $primerTarjeta=tarjeta;
+        $primerTarjeta.className=tarjeta.className;
+        console.log(tarjeta.className);
         intentos++;
-        $intentos.innerText="Intentos: " + intentos;
+        sumarIntento();
     }
    else{
         if($primerTarjeta===tarjeta){
@@ -65,7 +69,7 @@ function manejarInput($tablero){
     $tablero.onclick=function(e){
         
         const $tarjetaElegida = e.target;
-        
+        manejarEleccion($tarjetaElegida);
         if($tarjetaElegida.classList.contains("tarjeta")){
             manejarEleccion($tarjetaElegida);
         }
