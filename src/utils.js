@@ -78,7 +78,8 @@ function manejarEleccion(tarjeta){
 function eliminarTarjetas(tarjeta){
     setTimeout(function(){ tarjeta.classList.remove("transicion");
     tarjeta.classList.add("img-win");
-    tarjeta.classList.remove("img-back");},500);
+    tarjeta.classList.remove("img-back");
+    tarjeta.classList.remove("tarjeta");},500);
           
         }
 
