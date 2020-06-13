@@ -44,6 +44,7 @@ function manejarEleccion(tarjeta){
     if($primerTarjeta===null){
         $primerTarjeta = tarjeta;
         setTimeout(function(){desbloquearInput()},500);
+        sumarIntento();
     }
         
     if($primerTarjeta===tarjeta){
@@ -68,8 +69,9 @@ function manejarEleccion(tarjeta){
                 intentos++;
             },1000)
             setTimeout(function(){desbloquearInput()},1500);
+            sumarIntento();
         }
-        sumarIntento();
+        
         
         
     }
