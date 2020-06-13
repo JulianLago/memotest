@@ -139,5 +139,9 @@ html,body{
         width: 1080px;
         height: 720px;
     }
+    .tarjeta{
+        height: 50%;
+        
+    }
 }
  
