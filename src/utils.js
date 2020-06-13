@@ -79,7 +79,7 @@ function eliminarTarjetas(tarjeta){
     setTimeout(function(){ tarjeta.classList.remove("transicion");
     tarjeta.classList.add("img-win");
     tarjeta.classList.remove("img-back");
-    tarjeta.className("tarjeta elim");},500)};
+    tarjeta.className("tarjeta elim");},500);
           
         }
 
