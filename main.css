@@ -80,13 +80,26 @@ html,body{
     background-position: top;
     background-size: cover;
 }
+.transicion{
+    
+    position: absolute;
+    z-index: 2;
+    height: 120%;
+    width: 120%;
+    border:5px solid rgb(151, 103, 190);
+    transition: width 0.5s,height 0.5s, border 0.5s;
+}
 .img-back{
+    width: 100%;
+    transition: width 0.5s,height 0.5s,background-position 0.5s,border 0.5s;
     background: url(img/back-yggdra2.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
 .img-win{
-    background-color: purple;
+    width:100%;
+    transition:width 0.5s,opacity 0.5s;
+    opacity: 0.5;
 }
 #intentos{
     

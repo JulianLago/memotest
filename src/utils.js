@@ -1,11 +1,15 @@
-function ocultarTarjetas(){
-    $tarjetas.forEach(function(tarjeta){
-        tarjeta.classList.remove();
-        tarjeta.classList.add(imgTarjetaBack);
+function ocultarTarjetas(tarjeta){
+    
+        tarjeta.classList.remove("transicion");
+        tarjeta.classList.add("img-back");
         
-        })
-}
+    }
 
+function mostrarTarjeta(tarjeta){
+        tarjeta.classList.add("transicion");
+        tarjeta.classList.remove("img-back");
+
+}
 
 function empezarJuego(){
     intentos=0;
@@ -23,56 +27,78 @@ function mezclarTarjetas(tarjetas,imgTargetaRep){
     })
 }
 
-function mostrarTarjeta(tarjeta){
-    
-        tarjeta.classList.remove(imgTarjetaBack);
-    
-}
+
 function sumarIntento(){
     document.getElementById("intentos").innerHTML="Intentos: " + intentos;
 }
-function manejarEleccion(tarjeta){
-    mostrarTarjeta(tarjeta);
+function bloquearInput(){
+    $tablero.onclick=function(){};
+}
+function desbloquearInput(){
+    manejarInput($tablero);
+}
 
-    if($primerTarjeta==null){
-        $primerTarjeta.className=tarjeta.className;
-        console.log(tarjeta.className);
-        intentos++;
-        sumarIntento();
+function manejarEleccion(tarjeta){
+    mostrarTarjeta(tarjeta);  
+
+    if($primerTarjeta===null){
+        $primerTarjeta = tarjeta;
+        setTimeout(function(){desbloquearInput()},500);
     }
-   else{
-        if($primerTarjeta===tarjeta){
-        return;
+        
+    if($primerTarjeta===tarjeta){
+        setTimeout(function(){desbloquearInput()},500);
+            return;
         }
-        if(tarjetasIguales($primerTarjeta,tarjeta)){
+
+    if(tarjetasIguales($primerTarjeta,tarjeta)){
+        
         eliminarTarjetas(tarjeta);
         eliminarTarjetas($primerTarjeta);
-        }
-        else{
-            ocultarTarjetas();
-            $primerTarjeta=null;
-        }
-    }}
-        function eliminarTarjetas(tarjeta){
+        $primerTarjeta=null;
             
-            tarjeta.classList.add("img-win");
-
+        setTimeout(function(){desbloquearInput()},500);
+    }
+        else{
+            setTimeout(function(){
+                
+                ocultarTarjetas(tarjeta);
+                ocultarTarjetas($primerTarjeta);
+                $primerTarjeta=null;
+                intentos++;
+            },1000)
+            setTimeout(function(){desbloquearInput()},500);
         }
+        sumarIntento();
+        
+        
+    }
+    
+    
+function eliminarTarjetas(tarjeta){
+    setTimeout(function(){ tarjeta.classList.remove("transicion");
+    tarjeta.classList.add("img-win");
+    tarjeta.classList.remove("img-back");},500);
+          
+        }
+
 function tarjetasIguales(primertarjeta,segundatarjeta){
     return primertarjeta.className===segundatarjeta.className;
 }
 
 
 
-function manejarInput($tablero){
+function manejarInput($ta){
     
-    $tablero.onclick=function(e){
-        
+    $ta.onclick=function(e){
         const $tarjetaElegida = e.target;
-        manejarEleccion($tarjetaElegida);
+       
         if($tarjetaElegida.classList.contains("tarjeta")){
+           bloquearInput();
             manejarEleccion($tarjetaElegida);
+          
         }
+      
         
     }
 }
