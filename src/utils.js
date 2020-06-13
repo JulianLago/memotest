@@ -57,7 +57,7 @@ function manejarEleccion(tarjeta){
         eliminarTarjetas($primerTarjeta);
         $primerTarjeta=null;
             
-        setTimeout(function(){desbloquearInput()},500);
+        setTimeout(function(){desbloquearInput()},1500);
     }
         else{
             setTimeout(function(){
@@ -67,7 +67,7 @@ function manejarEleccion(tarjeta){
                 $primerTarjeta=null;
                 intentos++;
             },1000)
-            setTimeout(function(){desbloquearInput()},500);
+            setTimeout(function(){desbloquearInput()},1500);
         }
         sumarIntento();
         
