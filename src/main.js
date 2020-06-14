@@ -22,7 +22,7 @@ $botonMezclar.onclick=function(){
     })
 mezclarTarjetas($tarjetas,imgTarjetaRep);
 desbloquearInput();
- intentos=1;
+ intentos=0;
  sumarIntento();
 
 
