@@ -138,12 +138,13 @@ html,body{
 @media (max-width: 600px) {
  
     #tablero{
-        width:75%;
+        width:85%;
         height: 80%;
     }
     .tarjeta{
+
         height: 75%;
-        width: 120%;
+        width: 100%;
 
     }
 }
