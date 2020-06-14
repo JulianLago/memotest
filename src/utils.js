@@ -44,7 +44,7 @@ function manejarEleccion(tarjeta){
     if($primerTarjeta===null){
         $primerTarjeta = tarjeta;
         setTimeout(function(){desbloquearInput()},500);
-        sumarIntento();
+        
     }
         
     if($primerTarjeta===tarjeta){
@@ -67,9 +67,10 @@ function manejarEleccion(tarjeta){
                 ocultarTarjetas($primerTarjeta);
                 $primerTarjeta=null;
                 intentos++;
+                sumarIntento();
             },1000)
             setTimeout(function(){desbloquearInput()},1500);
-            sumarIntento();
+           
         }
         
         
@@ -78,10 +79,11 @@ function manejarEleccion(tarjeta){
     
     
 function eliminarTarjetas(tarjeta){
-    setTimeout(function(){ tarjeta.classList.remove("transicion");
+    setTimeout(function(){ 
+        tarjeta.classList.remove("transicion");
     tarjeta.classList.add("img-win");
     tarjeta.classList.remove("img-back");
-    tarjeta.className("tarjeta elim");},500);
+    tarjeta.id="tarjeta";},500);
           
         }
 
@@ -95,11 +97,13 @@ function manejarInput($ta){
     
     $ta.onclick=function(e){
         const $tarjetaElegida = e.target;
-       
+        if($tarjetaElegida.id==="tarjeta"){return;}
         if($tarjetaElegida.classList.contains("tarjeta")){
            bloquearInput();
-            manejarEleccion($tarjetaElegida);
-          
+            
+
+           manejarEleccion($tarjetaElegida);
+            
         }
       
         

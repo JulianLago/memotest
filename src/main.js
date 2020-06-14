@@ -4,7 +4,7 @@ const imgTarjeta = ["img-viking","img-romano","img-celta","img-chaman","img-mong
 const imgTarjetaRep = imgTarjeta.concat(imgTarjeta);
 const $botonMezclar = document.getElementById("mezclar");
 const $intentos = document.querySelector("#intentos");
-let intentos =  1;
+let intentos =  0;
 let $primerTarjeta=null;
 
 $tarjetas.forEach(function(tarjeta){
@@ -12,14 +12,18 @@ $tarjetas.forEach(function(tarjeta){
 })
 
 mezclarTarjetas($tarjetas,imgTarjetaRep);
-desbloquearInput();
+
+manejarInput($tablero);
 
 $botonMezclar.onclick=function(){  
     $tarjetas.forEach(function(tarjeta){
         tarjeta.className="tarjeta img-back";
+        tarjeta.id="";
     })
 mezclarTarjetas($tarjetas,imgTarjetaRep);
 desbloquearInput();
  intentos=1;
  sumarIntento();
+
+
 }
